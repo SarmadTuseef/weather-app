@@ -24,20 +24,20 @@ pipeline {
             }
         }
 
-        // stage('Build and Run Frontend Docker Image') {
-        //     steps {
-        //         dir('weather-app-frontend') {
-        //             // Building the Docker image
-        //             script {
-        //                 sh 'docker build -t weather-frontend .'
-        //             }
-        //             // Running the Docker container
-        //             script {
-        //                 sh 'docker run -d --name weather-frontend -p 3000:3000 weather-frontend'
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Build and Run Frontend Docker Image') {
+           steps {
+           dir('weather-app-frontend') {
+                // Building the Docker image
+                  script {
+                    sh 'docker build -t weather-frontend .'
+                }
+                 // Running the Docker container
+                   script {
+                    sh 'docker run -d --name weather-frontend -p 3000:3000 weather-frontend'
+                  }
+                }
+      }
+         }
     }
 
 }
